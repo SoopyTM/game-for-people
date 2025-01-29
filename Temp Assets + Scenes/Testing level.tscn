@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dueck5stjpm4k"]
 
-[ext_resource type="PackedScene" uid="uid://bk1w50ad5kial" path="res://tempFloor.tscn" id="1_s6nx7"]
-[ext_resource type="PackedScene" uid="uid://cwpi4k3sg3u8" path="res://Player.tscn" id="2_5qkfc"]
-[ext_resource type="PackedScene" uid="uid://s6lnegke1xuc" path="res://tempFloor2.tscn" id="3_t2h0f"]
+[ext_resource type="PackedScene" uid="uid://bk1w50ad5kial" path="res://Temp Assets + Scenes/tempFloor.tscn" id="1_s6nx7"]
+[ext_resource type="PackedScene" uid="uid://cwpi4k3sg3u8" path="res://Main Scenes/Player.tscn" id="2_5qkfc"]
+[ext_resource type="PackedScene" uid="uid://s6lnegke1xuc" path="res://Temp Assets + Scenes/tempFloor2.tscn" id="3_t2h0f"]
 
 [node name="Node2D" type="Node2D"]
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cwpi4k3sg3u8"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_22eiq"]
-[ext_resource type="Script" path="res://collision_shape_2d.gd" id="2_y0tsr"]
+[ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a8j7t"]
+[ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="2_42840"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
@@ -12,11 +12,11 @@ height = 168.0
 [node name="Player" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_22eiq")
+script = ExtResource("1_a8j7t")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("CapsuleShape2D_qgho4")
-script = ExtResource("2_y0tsr")
+script = ExtResource("2_42840")
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
 position = Vector2(0, 1.00136e-05)
