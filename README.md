@@ -1,2 +1,2 @@
 # game for people
- this is a game we're making
+ This is a game project originally made to test a movement script.
