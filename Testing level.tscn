@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=3 uid="uid://dueck5stjpm4k"]
+
+[ext_resource type="PackedScene" uid="uid://bk1w50ad5kial" path="res://tempFloor.tscn" id="1_s6nx7"]
+[ext_resource type="PackedScene" uid="uid://cwpi4k3sg3u8" path="res://Player.tscn" id="2_5qkfc"]
+[ext_resource type="PackedScene" uid="uid://s6lnegke1xuc" path="res://tempFloor2.tscn" id="3_t2h0f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = -6369.0
+offset_top = 100.0
+offset_right = -5545.0
+offset_bottom = 656.0
+theme_override_font_sizes/font_size = 76
+text = "Wall stuck jump thing:
+jump, crouch, onto 
+side of wall/ledge,
+jump after getting
+stuck"
+
+[node name="TextEdit2" type="TextEdit" parent="."]
+offset_left = 5279.0
+offset_top = 93.0
+offset_right = 6103.0
+offset_bottom = 649.0
+theme_override_font_sizes/font_size = 76
+text = "Crouch Jumping:
+Jump and crouch 
+at the same time onto
+ledge."
+
+[node name="TextEdit3" type="TextEdit" parent="."]
+offset_left = 180.0
+offset_top = 29.0
+offset_right = 1004.0
+offset_bottom = 585.0
+theme_override_font_sizes/font_size = 76
+text = "Crouching:
+Press: S/Down arrow"
+
+[node name="TextEdit4" type="TextEdit" parent="."]
+offset_left = -2220.0
+offset_top = 96.0
+offset_right = -1396.0
+offset_bottom = 652.0
+theme_override_font_sizes/font_size = 76
+text = "Jumping:
+Press: W/Space/Up 
+Arrow"
+
+[node name="TextEdit5" type="TextEdit" parent="."]
+offset_left = -782.0
+offset_top = 54.0
+offset_right = 42.0
+offset_bottom = 610.0
+theme_override_font_sizes/font_size = 76
+text = "テストレベルへようこそ"
+
+[node name="Player" parent="." instance=ExtResource("2_5qkfc")]
+position = Vector2(0, 316)
+
+[node name="tempFloor" parent="." instance=ExtResource("1_s6nx7")]
+position = Vector2(45, 725)
+
+[node name="tempFloor2" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-7491, 342)
+
+[node name="tempFloor4" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-7959, -38)
+
+[node name="tempFloor5" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-7875, -230)
+
+[node name="tempFloor6" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-7955, -414)
+
+[node name="tempFloor7" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-7951, -606)
+
+[node name="tempFloor3" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(7256, 444)
+
+[node name="tempFloor8" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(2151, 531)
+
+[node name="tempFloor9" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-3482, 469)
+
+[node name="tempFloor10" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-3965, 257)
+
+[node name="tempFloor11" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-4305, 38)
+
+[node name="tempFloor12" parent="." instance=ExtResource("3_t2h0f")]
+position = Vector2(-1746, -189)
