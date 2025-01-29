@@ -30,10 +30,10 @@ at the same time onto
 ledge."
 
 [node name="TextEdit3" type="TextEdit" parent="."]
-offset_left = 180.0
-offset_top = 29.0
-offset_right = 1004.0
-offset_bottom = 585.0
+offset_left = 144.0
+offset_top = 41.0
+offset_right = 968.0
+offset_bottom = 597.0
 theme_override_font_sizes/font_size = 76
 text = "Crouching:
 Press: S/Down arrow"
