@@ -4,7 +4,7 @@ const MAX_SPEED = 700.0
 const JUMP_VELOCITY = -870.0
 const CROUCH_SPEED = 350 # Currently Unused
 const DECELERATION_TIME = 0.05 # Time to stop (in seconds)
-const COYOTE_TIME = 0.2 # Time window after leaving the ground to still be able to jump (in seconds)
+const COYOTE_TIME = 0.2 # Time window after leaving the ground to still be able to jump (in seconds) 
 
 var acceleration := MAX_SPEED / 0
 var deceleration := MAX_SPEED / DECELERATION_TIME
