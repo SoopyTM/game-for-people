@@ -26,32 +26,33 @@ func _ready() -> void:
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Crouch"):
-		sprite2D.texture = load("res://Images/Base Mage-2.png.png")
+		sprite2D.texture = load("res://Images/Crouching/Base Mage-2.png.png")
+		sprite2D.position.y = -40
 		# Crouch logic.
 		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
-			sprite2D.texture = load("res://Images/Base Mage-2.png.png")
+			sprite2D.texture = load("res://Images/Crouching/Base Mage-2.png.png")
 			sprite2D.position.y = -40
 			sprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
-			sprite2D.texture = load("res://Images/Base Mage-2.png.png")
+			sprite2D.texture = load("res://Images/Crouching/Base Mage-2.png.png")
 			sprite2D.position.y = -40
 			sprite2D.flip_h = lastHFlip
 			
 	elif not raycast_above.is_colliding():  # Only allow uncrouching if nothing is above.
-		sprite2D.texture = load("res://Images/Base Mage-1.png.png")
+		sprite2D.texture = load("res://Images/Idle/Better Mage.png")
 		# Uncrouch logic.
 		scale.y = 1  # Scale CollisionShape2D back to normal height. # Scale the MeshInstance2D back to normal.
 		
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
-			sprite2D.texture = load("res://Images/Base Mage-1.png.png")
+			sprite2D.texture = load("res://Images/Idle/Better Mage.png")
 			sprite2D.position.y = 0
 			sprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
-			sprite2D.texture = load("res://Images/Base Mage-1.png.png")
+			sprite2D.texture = load("res://Images/Idle/Better Mage.png")
 			sprite2D.position.y = 0
 			sprite2D.flip_h = lastHFlip
