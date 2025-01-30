@@ -47,3 +47,6 @@ func _process(delta: float) -> void:
 		animatedSprite2D.play("Idle")
 		animatedSprite2D.position.y = 0
 		animatedSprite2D.flip_h = lastHFlip
+
+
+# A side effect of this is it will crouch when you hit the roof, but that's just an accecibility feature.
