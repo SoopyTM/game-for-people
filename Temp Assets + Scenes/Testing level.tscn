@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://dueck5stjpm4k"]
+[gd_scene load_steps=5 format=3 uid="uid://dueck5stjpm4k"]
 
 [ext_resource type="PackedScene" uid="uid://bk1w50ad5kial" path="res://Temp Assets + Scenes/tempFloor.tscn" id="1_s6nx7"]
 [ext_resource type="PackedScene" uid="uid://cwpi4k3sg3u8" path="res://Main Scenes/Player.tscn" id="2_5qkfc"]
 [ext_resource type="PackedScene" uid="uid://s6lnegke1xuc" path="res://Temp Assets + Scenes/tempFloor2.tscn" id="3_t2h0f"]
 [ext_resource type="PackedScene" uid="uid://bobrjw25b1qk3" path="res://Main Scenes/Enemy.tscn" id="4_1n73j"]
-[ext_resource type="Texture2D" uid="uid://bmdtk38i0nqye" path="res://Images/Another important image.jpg" id="5_6rn0p"]
 
 [node name="Testing Level" type="Node2D"]
 
@@ -99,9 +98,3 @@ position = Vector2(-1744, -129)
 
 [node name="Enemy" parent="." instance=ExtResource("4_1n73j")]
 position = Vector2(-955, 598)
-
-[node name="AnotherImportantImage" type="Sprite2D" parent="."]
-position = Vector2(-960, 331)
-rotation = 1.5708
-scale = Vector2(0.0710918, 0.0710918)
-texture = ExtResource("5_6rn0p")
