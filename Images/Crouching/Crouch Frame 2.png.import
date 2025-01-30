@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://kmm73sxacwx7"
-path="res://.godot/imported/Mage Walking 1.png-f7482799c89d9dcc698e9d481541f12e.ctex"
+uid="uid://cfg5pdnlgnt3v"
+path="res://.godot/imported/Crouch Frame 2.png-98a498271d627bab09c540f84fb8785f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Walking/Mage Walking 1.png"
-dest_files=["res://.godot/imported/Mage Walking 1.png-f7482799c89d9dcc698e9d481541f12e.ctex"]
+source_file="res://Images/Crouching/Crouch Frame 2.png"
+dest_files=["res://.godot/imported/Crouch Frame 2.png-98a498271d627bab09c540f84fb8785f.ctex"]
 
 [params]
 

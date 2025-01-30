@@ -1,11 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://cwpi4k3sg3u8"]
+[gd_scene load_steps=13 format=3 uid="uid://cwpi4k3sg3u8"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a8j7t"]
 [ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="2_42840"]
-[ext_resource type="Texture2D" uid="uid://kmm73sxacwx7" path="res://Images/Mage Walking 1.png" id="3_jfsjk"]
-[ext_resource type="Texture2D" uid="uid://c0urusy3dg7an" path="res://Images/Mage Walking 2.png" id="4_b3swl"]
-[ext_resource type="Texture2D" uid="uid://c1wewwvihetv1" path="res://Images/Mage Walking 3.png" id="5_scgdr"]
-[ext_resource type="Texture2D" uid="uid://4srnu1j738y2" path="res://Images/Mage Walking 4.png" id="6_auwy2"]
+[ext_resource type="Texture2D" uid="uid://kmm73sxacwx7" path="res://Images/Walking/Mage Walking 1.png" id="3_jfsjk"]
+[ext_resource type="Texture2D" uid="uid://db8f4ggrhgsvh" path="res://Images/Crouching/Crouch Frame 1.png" id="3_y3ksn"]
+[ext_resource type="Texture2D" uid="uid://c0urusy3dg7an" path="res://Images/Walking/Mage Walking 2.png" id="4_b3swl"]
+[ext_resource type="Texture2D" uid="uid://cfg5pdnlgnt3v" path="res://Images/Crouching/Crouch Frame 2.png" id="4_hmjeb"]
+[ext_resource type="Texture2D" uid="uid://b46pwh7x5cq2c" path="res://Images/Crouching/Crouch Frame 3.png" id="5_p8sxb"]
+[ext_resource type="Texture2D" uid="uid://c1wewwvihetv1" path="res://Images/Walking/Mage Walking 3.png" id="5_scgdr"]
+[ext_resource type="Texture2D" uid="uid://c33qeagxel1qw" path="res://Images/Crouching/Crouch Frame 4.png" id="6_2fnfr"]
+[ext_resource type="Texture2D" uid="uid://4srnu1j738y2" path="res://Images/Walking/Mage Walking 4.png" id="6_auwy2"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
@@ -13,6 +17,28 @@ height = 168.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hnvjt"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_y3ksn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hmjeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p8sxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_2fnfr")
+}],
+"loop": false,
+"name": &"Crouching",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_jfsjk")
@@ -26,8 +52,8 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("6_auwy2")
 }],
-"loop": true,
-"name": &"walk",
+"loop": false,
+"name": &"Walking",
 "speed": 4.0
 }]
 
@@ -47,7 +73,7 @@ position_smoothing_speed = 2.0
 target_position = Vector2(0, -98)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, 1)
-scale = Vector2(7.12891, 7.12891)
+position = Vector2(0, 10)
+scale = Vector2(6.25196, 6.25196)
 sprite_frames = SubResource("SpriteFrames_hnvjt")
-animation = &"walk"
+animation = &"Walking"

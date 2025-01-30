@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1wewwvihetv1"
-path="res://.godot/imported/Mage Walking 3.png-b8a5cfd26ef7a51ecf6b9b9e8ad15daa.ctex"
+path="res://.godot/imported/Mage Walking 3.png-b415407ff5909c0e4bcbc3c9de211c38.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Images/Mage Walking 3.png"
-dest_files=["res://.godot/imported/Mage Walking 3.png-b8a5cfd26ef7a51ecf6b9b9e8ad15daa.ctex"]
+source_file="res://Images/Walking/Mage Walking 3.png"
+dest_files=["res://.godot/imported/Mage Walking 3.png-b415407ff5909c0e4bcbc3c9de211c38.ctex"]
 
 [params]
 

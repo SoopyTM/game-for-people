@@ -24,20 +24,34 @@ func _ready() -> void:
 		print("RayCast2D node not found!")
 
 @warning_ignore("unused_parameter")
+
+# PREPARE YOURSELF FOR THE DISASTER THAT IS TIRED BRAIN CODE >:)
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Crouch"):
-		animatedSprite2D.play("walk")
+		animatedSprite2D.play("Crouching")
 		animatedSprite2D.position.y = -40
 		# Crouch logic.
 		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
-			animatedSprite2D.play("walk")
+			animatedSprite2D.play("Crouching")
 			animatedSprite2D.position.y = -40
 			animatedSprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
-			animatedSprite2D.play("walk")
+			animatedSprite2D.play("Crouching")
+			animatedSprite2D.position.y = -40
+			animatedSprite2D.flip_h = lastHFlip
+	elif raycast_above.is_colliding():
+		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
+		if Input.is_action_pressed("Walk_Left"):
+			lastHFlip = true
+			animatedSprite2D.play("Crouching")
+			animatedSprite2D.position.y = -40
+			animatedSprite2D.flip_h = lastHFlip
+		elif Input.is_action_pressed("Walk_Right"):
+			lastHFlip = false
+			animatedSprite2D.play("Crouching")
 			animatedSprite2D.position.y = -40
 			animatedSprite2D.flip_h = lastHFlip
 			
@@ -48,11 +62,11 @@ func _process(delta: float) -> void:
 		
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
-			animatedSprite2D.play("walk")
+			animatedSprite2D.play("Walking")
 			animatedSprite2D.position.y = 0
 			animatedSprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
-			animatedSprite2D.play("walk")
-			animatedSprite2D.position.y = -40
+			animatedSprite2D.play("Walking")
+			animatedSprite2D.position.y = 0
 			animatedSprite2D.flip_h = lastHFlip
