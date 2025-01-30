@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-const MAX_SPEED = 700.0 
+const MAX_SPEED = 700.0
 const JUMP_VELOCITY = -870.0
 const CROUCH_SPEED = 350 # Currently Unused
 const DECELERATION_TIME = 0.05 # Time to stop (in seconds)
