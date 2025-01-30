@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a8j7t"]
 [ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="2_42840"]
+[ext_resource type="Texture2D" uid="uid://b7y5cpbj6c2x3" path="res://Images/Base Mage-1.png.png" id="3_5daul"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
 height = 168.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ca571"]
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_a8j7t")
@@ -16,11 +15,6 @@ script = ExtResource("1_a8j7t")
 shape = SubResource("CapsuleShape2D_qgho4")
 script = ExtResource("2_42840")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-position = Vector2(0, 1.00136e-05)
-scale = Vector2(76, 85)
-mesh = SubResource("CapsuleMesh_ca571")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -200)
 zoom = Vector2(0.46, 0.46)
@@ -28,3 +22,7 @@ position_smoothing_speed = 2.0
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -98)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(6.875, 6.875)
+texture = ExtResource("3_5daul")

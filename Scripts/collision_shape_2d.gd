@@ -1,21 +1,22 @@
 extends CollisionShape2D
 
-var MeshInstance2DPlayer: MeshInstance2D
+var sprite2D: Sprite2D
 var raycast_above: RayCast2D
+var lastHFlip: bool
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Get the MeshInstance2D player object from the parent (adjust if needed).
-	MeshInstance2DPlayer = get_parent().get_node("MeshInstance2D")
+	sprite2D = get_parent().get_node("Sprite2D")
 	
 	# Get the RayCast2D node (make sure it's a child of the player and positioned above the player).
 	raycast_above = get_parent().get_node("RayCast2D")
 	
 	# Optionally, check if the nodes exist:
-	if MeshInstance2DPlayer:
-		print("MeshInstance2D node found!")
+	if sprite2D:
+		print("Sprite2D node found!")
 	else:
-		print("MeshInstance2D node not found!")
+		print("Sprite2D node not found!")
 	
 	if raycast_above:
 		print("RayCast2D node found!")
@@ -25,10 +26,32 @@ func _ready() -> void:
 @warning_ignore("unused_parameter")
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Crouch"):
+		sprite2D.texture = load("res://Images/Base Mage-2.png.png")
 		# Crouch logic.
-		scale.y = 0.5  # Scale CollisionShape2D (height).
-		MeshInstance2DPlayer.scale.y = 0.5 * 85  # Scale the MeshInstance2D for crouching.
+		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
+		if Input.is_action_pressed("Walk_Left"):
+			lastHFlip = true
+			sprite2D.texture = load("res://Images/Base Mage-2.png.png")
+			sprite2D.position.y = -40
+			sprite2D.flip_h = lastHFlip
+		elif Input.is_action_pressed("Walk_Right"):
+			lastHFlip = false
+			sprite2D.texture = load("res://Images/Base Mage-2.png.png")
+			sprite2D.position.y = -40
+			sprite2D.flip_h = lastHFlip
+			
 	elif not raycast_above.is_colliding():  # Only allow uncrouching if nothing is above.
+		sprite2D.texture = load("res://Images/Base Mage-1.png.png")
 		# Uncrouch logic.
-		scale.y = 1  # Scale CollisionShape2D back to normal height.
-		MeshInstance2DPlayer.scale.y = 1 * 85  # Scale the MeshInstance2D back to normal.
+		scale.y = 1  # Scale CollisionShape2D back to normal height. # Scale the MeshInstance2D back to normal.
+		
+		if Input.is_action_pressed("Walk_Left"):
+			lastHFlip = true
+			sprite2D.texture = load("res://Images/Base Mage-1.png.png")
+			sprite2D.position.y = 0
+			sprite2D.flip_h = lastHFlip
+		elif Input.is_action_pressed("Walk_Right"):
+			lastHFlip = false
+			sprite2D.texture = load("res://Images/Base Mage-1.png.png")
+			sprite2D.position.y = 0
+			sprite2D.flip_h = lastHFlip
