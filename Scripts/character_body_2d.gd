@@ -6,10 +6,14 @@ const CROUCH_SPEED = 350 # Currently Unused
 const DECELERATION_TIME = 0.05 # Time to stop (in seconds)
 const COYOTE_TIME = 0.2 # Time window after leaving the ground to still be able to jump (in seconds)
 
+var raycast_above: RayCast2D
 var acceleration := MAX_SPEED / 0
 var deceleration := MAX_SPEED / DECELERATION_TIME
 var coyote_timer := 0.0 # Timer to track coyote time
 var playerHealth: float = 100.0 # the players health
+
+func _ready() -> void:
+	raycast_above = get_node("RayCast2D")
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
@@ -44,9 +48,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		# Gradually decelerate to 0 when no input
 		velocity.x = move_toward(velocity.x, 0, deceleration * delta)
+		
+	if not Input.is_action_pressed("Crouch") and raycast_above.is_colliding():
+				velocity.x = move_toward(velocity.x, direction * CROUCH_SPEED, acceleration * delta)
 
 	# Check if the player falls below a certain point, triggering respawn
-	if position.y >= 2000:
+	if position.y >= 2000 or playerHealth == 0:
 		death()
 
 	# Apply movement
