@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://bobrjw25b1qk3"]
+
+[ext_resource type="Script" path="res://Scripts/Enemy_Movement.gd" id="1_wl0j2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
+radius = 38.0
+height = 168.0
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_ca571"]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_wl0j2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_qgho4")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+position = Vector2(0, 1.00136e-05)
+scale = Vector2(76, 85)
+mesh = SubResource("CapsuleMesh_ca571")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(500, 0)
+
+[node name="Timer" type="Timer" parent="."]

@@ -9,24 +9,22 @@ height = 168.0
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ca571"]
 
-[node name="Player" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_a8j7t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qgho4")
 script = ExtResource("2_42840")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="CharacterBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(0, 1.00136e-05)
 scale = Vector2(76, 85)
 mesh = SubResource("CapsuleMesh_ca571")
 
-[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+[node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(0, -200)
 zoom = Vector2(0.46, 0.46)
 position_smoothing_speed = 2.0
 
-[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(0, -98)
