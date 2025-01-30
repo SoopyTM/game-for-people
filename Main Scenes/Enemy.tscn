@@ -1,12 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://bobrjw25b1qk3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy_Movement.gd" id="1_wl0j2"]
+[ext_resource type="Texture2D" uid="uid://c3tx3k4mkbeop" path="res://Images/Important Image.png" id="2_d11o5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
 height = 168.0
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_ca571"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eaeg2"]
 
@@ -15,12 +14,6 @@ script = ExtResource("1_wl0j2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qgho4")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-position = Vector2(0, 1.00136e-05)
-scale = Vector2(76, 85)
-mesh = SubResource("CapsuleMesh_ca571")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(500, 0)
@@ -32,3 +25,8 @@ shape = SubResource("CapsuleShape2D_eaeg2")
 target_position = Vector2(0, 14.6341)
 
 [node name="Timer" type="Timer" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.367455, -1.19209e-06)
+scale = Vector2(0.180646, 0.362069)
+texture = ExtResource("2_d11o5")
