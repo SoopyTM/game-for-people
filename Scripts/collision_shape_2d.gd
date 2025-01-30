@@ -12,17 +12,6 @@ func _ready() -> void:
 	# Get the RayCast2D node (make sure it's a child of the player and positioned above the player).
 	raycast_above = get_parent().get_node("RayCast2D")
 	
-	# Optionally, check if the nodes exist:
-	if animatedSprite2D:
-		print("Sprite2D node found!")
-	else:
-		print("Sprite2D node not found!")
-	
-	if raycast_above:
-		print("RayCast2D node found!")
-	else:
-		print("RayCast2D node not found!")
-		
 	lastHFlip = false
 	animatedSprite2D.play("Walking")
 	animatedSprite2D.position.y = 0
