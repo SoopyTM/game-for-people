@@ -58,7 +58,7 @@ theme_override_font_sizes/font_size = 76
 text = "テストレベルへようこそ"
 
 [node name="Player" parent="." instance=ExtResource("2_5qkfc")]
-position = Vector2(0, 316)
+position = Vector2(-7, 600)
 
 [node name="tempFloor" parent="." instance=ExtResource("1_s6nx7")]
 position = Vector2(45, 725)
@@ -88,13 +88,13 @@ position = Vector2(2151, 531)
 position = Vector2(-3482, 469)
 
 [node name="tempFloor10" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-3965, 257)
+position = Vector2(-3935, 300)
 
 [node name="tempFloor11" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-4305, 38)
+position = Vector2(-4222, 121)
 
 [node name="tempFloor12" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-1746, -189)
+position = Vector2(-1744, -129)
 
 [node name="Enemy" parent="." instance=ExtResource("4_1n73j")]
-position = Vector2(-952, 566)
+position = Vector2(-955, 598)
