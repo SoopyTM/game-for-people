@@ -1,14 +1,16 @@
 extends CharacterBody2D
 
-const SPEED = 300.0
-const RUN_SPEED = 500.0
+const SPEED = 450.0
+const RUN_SPEED = 550.0
 const GRAVITY = 980.0  # Gravity strength
 const CHANGE_DIRECTION_INTERVAL = 1.5  # Change direction every 1.5 seconds
 
 var direction: Vector2 = Vector2.ZERO
 var time_since_change = 0.0
 var player = null
+var health: float = 100.0
 @onready var raycast = $RayCast2D
+@onready var shapeCast = $ShapeCast2D
 
 func _ready():
 	randomize()
@@ -37,7 +39,18 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y += GRAVITY * delta  # Apply gravity
 	move_and_slide()
+	
+	if shapeCast.is_colliding():
+		if shapeCast.get_collider(0) == player:
+			health -= 10
+	
+	
+	if health <= 0:
+		death()
 
 func change_direction():
 	direction.x = randf_range(-1.0, 1.0)
 	direction.y = 0
+	
+func death():
+	queue_free()

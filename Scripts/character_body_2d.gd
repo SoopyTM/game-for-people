@@ -9,6 +9,7 @@ const COYOTE_TIME = 0.2 # Time window after leaving the ground to still be able 
 var acceleration := MAX_SPEED / 0
 var deceleration := MAX_SPEED / DECELERATION_TIME
 var coyote_timer := 0.0 # Timer to track coyote time
+var playerHealth: float = 100.0 # the players health
 
 func _physics_process(delta: float) -> void:
 	# Add gravity
