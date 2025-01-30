@@ -89,7 +89,7 @@ position_smoothing_speed = 2.0
 target_position = Vector2(0, -90)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, 10)
+position = Vector2(3, 9)
 scale = Vector2(6.25196, 6.25196)
 sprite_frames = SubResource("SpriteFrames_hnvjt")
 animation = &"Idle"

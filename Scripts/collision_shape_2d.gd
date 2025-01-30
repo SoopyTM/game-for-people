@@ -40,12 +40,12 @@ func _process(delta: float) -> void:
 			animatedSprite2D.play("Walking")
 		else:
 			animatedSprite2D.play("Idle")
-		animatedSprite2D.position.y = 0
+		animatedSprite2D.position.y = 7
 		animatedSprite2D.flip_h = lastHFlip
 
 	if Input.is_action_just_released("Crouch") or Input.is_action_just_released("Walk_Left") or Input.is_action_just_released("Walk_Right"):
 		animatedSprite2D.play("Idle")
-		animatedSprite2D.position.y = 0
+		animatedSprite2D.position.y = 7
 		animatedSprite2D.flip_h = lastHFlip
 
 
