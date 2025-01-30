@@ -22,57 +22,39 @@ func _ready() -> void:
 		print("RayCast2D node found!")
 	else:
 		print("RayCast2D node not found!")
+		
+	lastHFlip = false
+	animatedSprite2D.play("Walking")
+	animatedSprite2D.position.y = 0
+	animatedSprite2D.flip_h = lastHFlip
 
 @warning_ignore("unused_parameter")
 
 # PREPARE YOURSELF FOR THE DISASTER THAT IS TIRED BRAIN CODE >:)
 func _process(delta: float) -> void:
-	if Input.is_action_pressed("Crouch"):
+	if Input.is_action_pressed("Crouch") or raycast_above.is_colliding():
 		animatedSprite2D.play("Crouching")
 		animatedSprite2D.position.y = -40
-		# Crouch logic.
-		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
+		scale.y = 0.5  # Scale CollisionShape2D (height).
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
-			animatedSprite2D.play("Crouching")
-			animatedSprite2D.position.y = -40
-			animatedSprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
-			animatedSprite2D.play("Crouching")
-			animatedSprite2D.position.y = -40
-			animatedSprite2D.flip_h = lastHFlip
-	elif raycast_above.is_colliding():
-		scale.y = 0.5  # Scale CollisionShape2D (height).  # Scale the MeshInstance2D for crouching.
-		if Input.is_action_pressed("Walk_Left"):
-			lastHFlip = true
-			animatedSprite2D.play("Crouching")
-			animatedSprite2D.position.y = -40
-			animatedSprite2D.flip_h = lastHFlip
-		elif Input.is_action_pressed("Walk_Right"):
-			lastHFlip = false
-			animatedSprite2D.play("Crouching")
-			animatedSprite2D.position.y = -40
-			animatedSprite2D.flip_h = lastHFlip
-			
-	elif not raycast_above.is_colliding():  # Only allow uncrouching if nothing is above.
-		
-		# Uncrouch logic.
-		scale.y = 1  # Scale CollisionShape2D back to normal height. # Scale the MeshInstance2D back to normal.
-		
+		animatedSprite2D.flip_h = lastHFlip
+	else:
+		scale.y = 1  # Scale CollisionShape2D back to normal height.
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
 			animatedSprite2D.play("Walking")
-			animatedSprite2D.position.y = 0
-			animatedSprite2D.flip_h = lastHFlip
 		elif Input.is_action_pressed("Walk_Right"):
 			lastHFlip = false
 			animatedSprite2D.play("Walking")
-			animatedSprite2D.position.y = 0
-			animatedSprite2D.flip_h = lastHFlip
-	
-	if Input.is_action_just_released("Crouch"):
-		lastHFlip = true
-		animatedSprite2D.play("Walking")
+		else:
+			animatedSprite2D.play("Idle")
+		animatedSprite2D.position.y = 0
+		animatedSprite2D.flip_h = lastHFlip
+
+	if Input.is_action_just_released("Crouch") or Input.is_action_just_released("Walk_Left") or Input.is_action_just_released("Walk_Right"):
+		animatedSprite2D.play("Idle")
 		animatedSprite2D.position.y = 0
 		animatedSprite2D.flip_h = lastHFlip

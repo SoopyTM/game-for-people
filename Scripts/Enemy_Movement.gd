@@ -17,6 +17,10 @@ func _ready():
 	change_direction()
 
 func _physics_process(delta: float) -> void:
+	
+	if shapeCast.is_colliding():
+		if shapeCast.get_collider(0) == player:
+			health -= 10
 	time_since_change += delta
 	
 	if player:
@@ -39,10 +43,6 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y += GRAVITY * delta  # Apply gravity
 	move_and_slide()
-	
-	if shapeCast.is_colliding():
-		if shapeCast.get_collider(0) == player:
-			health -= 10
 	
 	
 	if health <= 0:

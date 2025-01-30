@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cwpi4k3sg3u8"]
+[gd_scene load_steps=17 format=3 uid="uid://cwpi4k3sg3u8"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a8j7t"]
 [ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="2_42840"]
@@ -10,6 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c1wewwvihetv1" path="res://Images/Walking/Mage Walking 3.png" id="5_scgdr"]
 [ext_resource type="Texture2D" uid="uid://c33qeagxel1qw" path="res://Images/Crouching/Crouch Frame 4.png" id="6_2fnfr"]
 [ext_resource type="Texture2D" uid="uid://4srnu1j738y2" path="res://Images/Walking/Mage Walking 4.png" id="6_auwy2"]
+[ext_resource type="Texture2D" uid="uid://lhkh2sk1aqxs" path="res://Images/Idle/Idle Frame 1.png" id="7_e3u5w"]
+[ext_resource type="Texture2D" uid="uid://bn3x3n5w1upum" path="res://Images/Idle/Idle Frame 2.png" id="8_tctq7"]
+[ext_resource type="Texture2D" uid="uid://bqqrlc1auunqd" path="res://Images/Idle/Idle Frame 3.png" id="9_hhl37"]
+[ext_resource type="Texture2D" uid="uid://cwvhc87hpu7t4" path="res://Images/Idle/Idle Frame 4.png" id="10_fwdmx"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
@@ -32,12 +36,24 @@ animations = [{
 }],
 "loop": false,
 "name": &"Crouching",
-"speed": 5.0
+"speed": 4.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_e3u5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tctq7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hhl37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fwdmx")
+}],
 "loop": false,
 "name": &"Idle",
-"speed": 5.0
+"speed": 4.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,4 +92,6 @@ target_position = Vector2(0, -85)
 position = Vector2(0, 10)
 scale = Vector2(6.25196, 6.25196)
 sprite_frames = SubResource("SpriteFrames_hnvjt")
-animation = &"Walking"
+animation = &"Idle"
+frame = 3
+frame_progress = 1.0
