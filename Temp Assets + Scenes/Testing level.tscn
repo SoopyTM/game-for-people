@@ -9,10 +9,10 @@
 [node name="Testing Level" type="Node2D"]
 
 [node name="TextEdit" type="TextEdit" parent="."]
-offset_left = -6369.0
-offset_top = 100.0
-offset_right = -5545.0
-offset_bottom = 656.0
+offset_left = -3601.0
+offset_top = 52.0
+offset_right = -2777.0
+offset_bottom = 608.0
 theme_override_font_sizes/font_size = 76
 text = "Wall stuck jump thing:
 jump, crouch, onto 
@@ -73,19 +73,19 @@ position = Vector2(-7, 600)
 position = Vector2(45, 725)
 
 [node name="tempFloor2" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-7491, 342)
+position = Vector2(-4723, 294)
 
 [node name="tempFloor4" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-7959, -38)
+position = Vector2(-5191, -86)
 
 [node name="tempFloor5" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-7875, -230)
+position = Vector2(-5107, -278)
 
 [node name="tempFloor6" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-7955, -414)
+position = Vector2(-5187, -462)
 
 [node name="tempFloor7" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-7951, -606)
+position = Vector2(-5183, -654)
 
 [node name="tempFloor3" parent="." instance=ExtResource("3_t2h0f")]
 position = Vector2(9128, 429)
