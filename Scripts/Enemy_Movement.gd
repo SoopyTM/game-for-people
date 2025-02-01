@@ -11,14 +11,19 @@ var player = null
 var health: float = 100.0
 @onready var raycast = $RayCast2D
 @onready var shapeCast = $ShapeCast2D
+var bullet: Area2D
 
 func _ready():
 	randomize()
 	change_direction()
 
 func _physics_process(delta: float) -> void:
-	if shapeCast.is_colliding() and shapeCast.get_collider(0) == player:
-		health -= 10
+	if shapeCast.is_colliding():
+		var collider = shapeCast.get_collider(0)
+		if collider == player:
+			health -= 10
+		elif collider.is_in_group("enemy"):  # Replace "enemy" with the appropriate group or condition
+			health -= 10
 
 	time_since_change += delta
 	

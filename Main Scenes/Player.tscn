@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://cwpi4k3sg3u8"]
+[gd_scene load_steps=18 format=3 uid="uid://cwpi4k3sg3u8"]
 
 [ext_resource type="Script" path="res://Scripts/character_body_2d.gd" id="1_a8j7t"]
 [ext_resource type="Script" path="res://Scripts/collision_shape_2d.gd" id="2_42840"]
+[ext_resource type="PackedScene" uid="uid://bvvs1b6eswxj1" path="res://Main Scenes/bullet.tscn" id="2_j2qdx"]
 [ext_resource type="Texture2D" uid="uid://kmm73sxacwx7" path="res://Images/Walking/Mage Walking 1.png" id="3_jfsjk"]
 [ext_resource type="Texture2D" uid="uid://db8f4ggrhgsvh" path="res://Images/Crouching/Crouch Frame 1.png" id="3_y3ksn"]
 [ext_resource type="Texture2D" uid="uid://c0urusy3dg7an" path="res://Images/Walking/Mage Walking 2.png" id="4_b3swl"]
@@ -75,6 +76,7 @@ animations = [{
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_a8j7t")
+bullet = ExtResource("2_j2qdx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_qgho4")
