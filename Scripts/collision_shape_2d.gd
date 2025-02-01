@@ -43,11 +43,13 @@ func _process(delta: float) -> void:
 		animatedSprite2D.position.y = 7
 		animatedSprite2D.flip_h = lastHFlip
 
-	if Input.is_action_just_released("Crouch") or Input.is_action_just_released("Walk_Left") or Input.is_action_just_released("Walk_Right"):
+	if Input.is_action_just_released("Crouch"):
 		if raycast_above.is_colliding():
 			animatedSprite2D.position.y = animatedSprite2D.position.y #This is literally bc Its 1am and i cant think of a raycast_above isn't colliding
 		else:
 			animatedSprite2D.play("Idle")
 			animatedSprite2D.position.y = 7
 			animatedSprite2D.flip_h = lastHFlip
+			# fixes the weird uncrouch issuea
+			
 # A side effect of this is it will crouch when you hit the roof, but that's just an accecibility feature.
