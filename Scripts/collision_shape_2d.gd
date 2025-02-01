@@ -23,7 +23,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Crouch") or raycast_above.is_colliding():
 		animatedSprite2D.play("Crouching")
-		animatedSprite2D.position.y = -40
+		animatedSprite2D.position.y = -35
 		scale.y = 0.5  # Scale CollisionShape2D (height).
 		if Input.is_action_pressed("Walk_Left"):
 			lastHFlip = true
