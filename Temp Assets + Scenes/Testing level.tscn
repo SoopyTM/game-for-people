@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dueck5stjpm4k"]
+[gd_scene load_steps=6 format=3 uid="uid://dueck5stjpm4k"]
 
 [ext_resource type="PackedScene" uid="uid://bk1w50ad5kial" path="res://Temp Assets + Scenes/tempFloor.tscn" id="1_s6nx7"]
 [ext_resource type="PackedScene" uid="uid://cwpi4k3sg3u8" path="res://Main Scenes/Player.tscn" id="2_5qkfc"]
 [ext_resource type="PackedScene" uid="uid://s6lnegke1xuc" path="res://Temp Assets + Scenes/tempFloor2.tscn" id="3_t2h0f"]
 [ext_resource type="PackedScene" uid="uid://bobrjw25b1qk3" path="res://Main Scenes/Enemy.tscn" id="4_1n73j"]
+[ext_resource type="PackedScene" uid="uid://bdnmupcdb0koa" path="res://Temp Assets + Scenes/tempFloor3.tscn" id="5_wyxki"]
 
 [node name="Testing Level" type="Node2D"]
 
@@ -21,10 +22,10 @@ stuck"
 editable = false
 
 [node name="TextEdit2" type="TextEdit" parent="."]
-offset_left = 5279.0
-offset_top = 93.0
-offset_right = 6103.0
-offset_bottom = 649.0
+offset_left = 6776.0
+offset_top = 42.0
+offset_right = 7600.0
+offset_bottom = 598.0
 theme_override_font_sizes/font_size = 76
 text = "Crouch Jumping:
 Jump and crouch 
@@ -33,34 +34,37 @@ ledge."
 editable = false
 
 [node name="TextEdit3" type="TextEdit" parent="."]
-offset_left = 144.0
-offset_top = 41.0
-offset_right = 968.0
-offset_bottom = 597.0
+offset_left = -562.0
+offset_top = 21.0
+offset_right = 262.0
+offset_bottom = 577.0
 theme_override_font_sizes/font_size = 76
 text = "Crouching:
 Press: S/Down arrow"
 editable = false
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit4" type="TextEdit" parent="."]
-offset_left = -2220.0
-offset_top = 96.0
-offset_right = -1396.0
-offset_bottom = 652.0
+offset_left = 2797.0
+offset_top = -39.0
+offset_right = 3621.0
+offset_bottom = 517.0
 theme_override_font_sizes/font_size = 76
 text = "Jumping:
 Press: W/Space/Up 
 Arrow"
 editable = false
+metadata/_edit_use_anchors_ = true
 
 [node name="TextEdit5" type="TextEdit" parent="."]
-offset_left = -782.0
-offset_top = 54.0
-offset_right = 42.0
-offset_bottom = 610.0
+offset_left = -2201.0
+offset_top = 14.0
+offset_right = -1377.0
+offset_bottom = 570.0
 theme_override_font_sizes/font_size = 76
 text = "テストレベルへようこそ"
 editable = false
+metadata/_edit_use_anchors_ = true
 
 [node name="Player" parent="." instance=ExtResource("2_5qkfc")]
 position = Vector2(-7, 600)
@@ -84,22 +88,22 @@ position = Vector2(-7955, -414)
 position = Vector2(-7951, -606)
 
 [node name="tempFloor3" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(7256, 444)
+position = Vector2(9128, 429)
 
 [node name="tempFloor8" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(2151, 531)
-
-[node name="tempFloor9" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-3482, 469)
-
-[node name="tempFloor10" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-3935, 300)
-
-[node name="tempFloor11" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-4222, 121)
-
-[node name="tempFloor12" parent="." instance=ExtResource("3_t2h0f")]
-position = Vector2(-1744, -129)
+position = Vector2(1415, 547)
 
 [node name="Enemy" parent="." instance=ExtResource("4_1n73j")]
 position = Vector2(-955, 598)
+
+[node name="tempFloor13" parent="." instance=ExtResource("5_wyxki")]
+position = Vector2(4104, 473)
+
+[node name="tempFloor14" parent="." instance=ExtResource("5_wyxki")]
+position = Vector2(4513, 246)
+
+[node name="tempFloor15" parent="." instance=ExtResource("5_wyxki")]
+position = Vector2(4976, 1)
+
+[node name="tempFloor13" parent="tempFloor15" instance=ExtResource("5_wyxki")]
+position = Vector2(1037, -22)
