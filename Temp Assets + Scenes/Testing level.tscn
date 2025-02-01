@@ -97,7 +97,7 @@ position = Vector2(1415, 547)
 position = Vector2(-955, 598)
 
 [node name="tempFloor13" parent="." instance=ExtResource("5_wyxki")]
-position = Vector2(4104, 473)
+position = Vector2(4108, 458)
 
 [node name="tempFloor14" parent="." instance=ExtResource("5_wyxki")]
 position = Vector2(4513, 246)
