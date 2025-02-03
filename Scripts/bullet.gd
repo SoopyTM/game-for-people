@@ -1,6 +1,6 @@
 extends Area2D
 
-@export var speed: float = 600
+@export var speed: float = 1000
 var direction: Vector2 = Vector2.ZERO
 @onready var timer: Timer = $Timer
 

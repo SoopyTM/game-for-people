@@ -69,7 +69,7 @@ func spawn_bullets():
 
 				get_parent().add_child(bullet_instance)
 				canShoot = false
-				await get_tree().create_timer(0.2).timeout
+				await get_tree().create_timer(0.4).timeout
 				canShoot = true
 			else:
 				push_error("Bullet scene is not assigned!")
