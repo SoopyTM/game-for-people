@@ -105,5 +105,5 @@ position = Vector2(4513, 246)
 [node name="tempFloor15" parent="." instance=ExtResource("5_wyxki")]
 position = Vector2(4976, 1)
 
-[node name="tempFloor13" parent="tempFloor15" instance=ExtResource("5_wyxki")]
-position = Vector2(1037, -22)
+[node name="tempFloor16" parent="." instance=ExtResource("5_wyxki")]
+position = Vector2(6013, -21)
