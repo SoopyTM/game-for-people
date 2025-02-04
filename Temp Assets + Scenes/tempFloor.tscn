@@ -5,15 +5,13 @@ size = Vector2(2100, 80)
 
 [sub_resource type="BoxMesh" id="BoxMesh_dev1h"]
 
-[node name="tempFloor" type="Node2D"]
+[node name="TempFloor" type="StaticBody2D" groups=["Floor"]]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(9.87, 1)
 shape = SubResource("RectangleShape2D_0g662")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="StaticBody2D"]
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
 position = Vector2(-1.99963, -1)
 scale = Vector2(20726, 80)
 mesh = SubResource("BoxMesh_dev1h")
