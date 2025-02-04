@@ -1,13 +1,36 @@
-[gd_scene load_steps=5 format=3 uid="uid://bobrjw25b1qk3"]
+[gd_scene load_steps=9 format=3 uid="uid://bobrjw25b1qk3"]
 
 [ext_resource type="Script" path="res://Scripts/Enemy_Movement.gd" id="1_wl0j2"]
-[ext_resource type="Texture2D" uid="uid://c3tx3k4mkbeop" path="res://Images/Important Image.png" id="2_d11o5"]
+[ext_resource type="Texture2D" uid="uid://bak3typ16afgm" path="res://Images/ENESHMOMENEMY/Skeleton Frame 1.png" id="2_kj1cb"]
+[ext_resource type="Texture2D" uid="uid://c4sloaueglcvy" path="res://Images/ENESHMOMENEMY/Skeleton Frame 2.png" id="3_k8knj"]
+[ext_resource type="Texture2D" uid="uid://b5j65pbp4w506" path="res://Images/ENESHMOMENEMY/Skeleton Frame 3.png" id="4_xfmr7"]
+[ext_resource type="Texture2D" uid="uid://b0bbw45wxsnv1" path="res://Images/ENESHMOMENEMY/Skeleton Frame 4.png" id="5_7r3lt"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qgho4"]
 radius = 38.0
 height = 168.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eaeg2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e31h3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kj1cb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_k8knj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xfmr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_7r3lt")
+}],
+"loop": true,
+"name": &"Walk",
+"speed": 5.0
+}]
 
 [node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
 script = ExtResource("1_wl0j2")
@@ -26,7 +49,9 @@ target_position = Vector2(0, 14.6341)
 
 [node name="Timer" type="Timer" parent="."]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(-0.367455, -1.19209e-06)
-scale = Vector2(0.180646, 0.362069)
-texture = ExtResource("2_d11o5")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(8, 12)
+scale = Vector2(5.73499, 5.73499)
+sprite_frames = SubResource("SpriteFrames_e31h3")
+animation = &"Walk"
+frame_progress = 0.339026
