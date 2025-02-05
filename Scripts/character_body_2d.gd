@@ -17,7 +17,7 @@ var playerHealth: float = 100.0
 var canShoot: bool = true
 
 func _ready() -> void:
-	raycast_above = get_node("RayCast2D")
+	raycast_above = get_node("Roof Detection Ray")
 
 func _physics_process(delta: float) -> void:
 	spawn_bullets()

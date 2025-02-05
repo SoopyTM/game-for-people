@@ -7,7 +7,7 @@ var lastHFlip: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	animatedSprite2D = get_parent().get_node("AnimatedSprite2D")
-	raycastAbove = get_parent().get_node("RayCast2D")
+	raycastAbove = get_parent().get_node("Roof Detection Ray")
 	animatedSprite2D.play("Walking")
 	animatedSprite2D.position.y = 0
 	animatedSprite2D.flip_h = lastHFlip
