@@ -1,12 +1,47 @@
-[gd_scene load_steps=5 format=3 uid="uid://bvvs1b6eswxj1"]
+[gd_scene load_steps=12 format=3 uid="uid://bvvs1b6eswxj1"]
 
 [ext_resource type="Script" path="res://Scripts/bullet.gd" id="1_gdfjj"]
+[ext_resource type="Texture2D" uid="uid://dmqjp1dnxrrpb" path="res://Images/Fireball/Fireball Frame 1.png" id="2_butt6"]
+[ext_resource type="Texture2D" uid="uid://ccvw8qedrrjlf" path="res://Images/Fireball/Fireball Frame 2.png" id="3_gmv1s"]
+[ext_resource type="Texture2D" uid="uid://wneas2go7pas" path="res://Images/Fireball/Fireball Frame 3.png" id="4_k7aqo"]
+[ext_resource type="Texture2D" uid="uid://dysoordraewba" path="res://Images/Fireball/Fireball Frame 4.png" id="5_p6uav"]
+[ext_resource type="Texture2D" uid="uid://blgjjf2y3ixu7" path="res://Images/Fireball/Fireball Frame 5.png" id="6_y3v6l"]
+[ext_resource type="Texture2D" uid="uid://db8ekheffw7tq" path="res://Images/Fireball/Fireball Frame 6.png" id="7_svxo0"]
+[ext_resource type="Texture2D" uid="uid://bh4fhwlcl1eli" path="res://Images/Fireball/Fireball Frame 7.png" id="8_mwcd0"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_w3qlq"]
+radius = 16.0312
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ejusx"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_c57a2"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycvd6"]
+animations = [{
+"frames": [{
+"duration": 1.5,
+"texture": ExtResource("2_butt6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gmv1s")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_k7aqo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_p6uav")
+}, {
+"duration": 1.5,
+"texture": ExtResource("6_y3v6l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_svxo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_mwcd0")
+}],
+"loop": true,
+"name": &"fireBall",
+"speed": 7.0
+}]
 
 [node name="bullet" type="Area2D" groups=["bullet"]]
 script = ExtResource("1_gdfjj")
@@ -14,18 +49,19 @@ script = ExtResource("1_gdfjj")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_w3qlq")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-
 [node name="ShapeCast2D" type="ShapeCast2D" parent="."]
+scale = Vector2(1.605, 1.595)
 shape = SubResource("CircleShape2D_ejusx")
 target_position = Vector2(0, 0)
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
-modulate = Color(0.988235, 0, 0, 1)
-position = Vector2(0, 2.44379e-06)
-scale = Vector2(20.0227, 20)
-mesh = SubResource("SphereMesh_c57a2")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 autostart = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(4, -17)
+scale = Vector2(2.08203, 2.08203)
+sprite_frames = SubResource("SpriteFrames_ycvd6")
+animation = &"fireBall"
+frame = 3
+frame_progress = 0.105796

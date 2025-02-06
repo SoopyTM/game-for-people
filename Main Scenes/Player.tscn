@@ -97,3 +97,5 @@ sprite_frames = SubResource("SpriteFrames_hnvjt")
 animation = &"Idle"
 frame = 3
 frame_progress = 1.0
+
+[node name="Aiming Ray" type="RayCast2D" parent="."]

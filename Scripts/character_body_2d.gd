@@ -63,15 +63,14 @@ func spawn_bullets():
 				var bullet_instance = bullet.instantiate()
 				bullet_instance.global_transform = global_transform  # Set position
 
-				# Get player's facing direction based on sprite flip_h
-				var player_facing_direction = Vector2(-1 if get_node("CollisionShape2D").animatedSprite2D.flip_h else 1, 0)  
-				bullet_instance.direction = player_facing_direction  # Set bullet direction
+				# Calculate direction towards the mouse cursor
+				var mouse_position = get_global_mouse_position()
+				var direction = (mouse_position - global_position).normalized()
+				bullet_instance.direction = direction
 
 				get_parent().add_child(bullet_instance)
 				canShoot = false
-				await get_tree().create_timer(0.4).timeout
+				await get_tree().create_timer(0.2).timeout
 				canShoot = true
 			else:
 				push_error("Bullet scene is not assigned!")
-
-			

@@ -12,6 +12,7 @@ func _ready() -> void:
 	animatedSprite2D.position.y = 0
 	animatedSprite2D.flip_h = lastHFlip
 
+
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("Crouch") or raycastAbove.is_colliding():
 		_crouch()

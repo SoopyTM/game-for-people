@@ -1,11 +1,19 @@
+# find a "is ready" function and put that in _process. this is for the animation. probably do if possible: "if bulletOrSomeThing.is_ready()" or something like that.
+
+
 extends Area2D
 
 @export var speed: float = 1000
 @export var direction: Vector2 = Vector2.RIGHT
 
+var animatedSprite2D
+
+var is_ready: bool = false
+
 @onready var timer: Timer = $Timer
 
 func _ready():
+	is_ready = true
 	if direction == Vector2.ZERO:
 		print("Bullet has no direction! Defaulting to right.")
 		direction = Vector2.RIGHT
@@ -14,6 +22,9 @@ func _ready():
 	body_entered.connect(_on_body_entered)
 
 func _process(delta: float) -> void:
+	if is_ready:
+		animatedSprite2D = get_node("AnimatedSprite2D")
+		animatedSprite2D.play()
 	position += direction * speed * delta
 
 func _on_timer_timeout():
