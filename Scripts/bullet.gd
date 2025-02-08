@@ -1,6 +1,3 @@
-# find a "is ready" function and put that in _process. this is for the animation. probably do if possible: "if bulletOrSomeThing.is_ready()" or something like that.
-
-
 extends Area2D
 
 @export var speed: float = 1000
@@ -15,7 +12,6 @@ var is_ready: bool = false
 func _ready():
 	is_ready = true
 	if direction == Vector2.ZERO:
-		print("Bullet has no direction! Defaulting to right.")
 		direction = Vector2.RIGHT
 	
 	timer.timeout.connect(_on_timer_timeout)
